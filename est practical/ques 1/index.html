@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pure CSS Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo"></a>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#home" class="active">Home</a> 
+                </li>
+                <li class="nav-item">
+                    <a href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home" class="page-section">
+        <h2>Home Section (Active)</h2>
+        <p>This is the first page section.</p>
+    </section>
+
+    <section id="about" class="page-section">
+        <h2>About Section</h2>
+        <p>Scroll down or click the link to jump here.</p>
+    </section>
+
+    <section id="contact" class="page-section">
+        <h2>Contact Section</h2>
+        <p>The final section of the page.</p>
+    </section>
+    <script>
+    const links = document.querySelectorAll('.nav-links a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
